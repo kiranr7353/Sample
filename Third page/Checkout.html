@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+      <!-- Custom styles for this template -->
+      <link href="/Second Page/Mobiles/form-validation.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+       <!-- Nav -->
+<!-- <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+    <div class="row">
+        <div class="col">
+          <a href="cart.html" type="button" class="btn btn-primary" >Cart (<span class="total-count"></span>)</a></div>
+    </div>
+</nav> -->
+<div class="container-fluid">
+    <div class="py-5 text-center">
+      <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+      <h2>Checkout</h2>
+      
+    </div>
+  
+    <div class="row">
+      <div class="col-md-5 order-md-2 mb-4">
+      <div class="card">
+        <h4 class="card-heading text-center bg-dark text-white p-2">
+          
+          <span>Your cart</span>
+          <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+        </h4>
+        <div class="show-cart">
+          
+        </div>
+        <li class="list-group-item d-flex justify-content-between">
+            <span class="col-md-6">Total (Rupees)</span>
+            <div class="total mr-4"><i class="fa fa-inr col-md-6 pl-5" aria-hidden="true" style="font-size: 20px;"></i> <span class="total-cart"></span>.00</div>
+          </li>
+        
+         
+        <div class=" p-2">
+          
+           
+            
+              <a href="cart.html"><button type="submit" class="btn btn-primary btn-lg btn-block">Edit Cart</button></a>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="col-md-7 order-md-1">
+        <h4 class="card-heading text-center border p-2 bg-dark text-white">Billing address</h4>
+       <div class="card p-5 pt-0">
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">First name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" id="username" placeholder="Username" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Your username is required.
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          </div>
+  
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Country</label>
+              <select class="custom-select d-block w-100" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">State</label>
+              <select class="custom-select d-block w-100" id="state" required>
+                <option value="">Choose...</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Zip</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Zip code required.
+              </div>
+              </div>
+            </div>
+          </div>
+          
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+          </div>
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="save-info">
+            <label class="custom-control-label" for="save-info">Save this information for next time</label>
+          </div>
+          <hr class="mb-4">
+  
+          <div class="card card-info">
+            <div class="card card-heading pt-2 bg-dark text-white"><h4 style="text-align: center;"> Secure Payment </h4></div>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Card Type:</strong></div>
+                    <div class="col-md-12">
+                        <select id="CreditCardType" name="CreditCardType" class="form-control">
+                            <option value="5">Visa</option>
+                            <option value="6">MasterCard</option>
+                            <option value="7">American Express</option>
+                            <option value="8">Discover</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Credit Card Number:</strong></div>
+                    <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" /></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Card CVV:</strong></div>
+                    <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" /></div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <strong>Expiration Date</strong>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6 pl-4">
+                        <select class="form-control" name="">
+                            <option value="">Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                    </select>
+                    </div>
+                    <div class="col-md-6 pr-4">
+                        <select class="form-control" name="">
+                            <option value="">Year</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                    </select>
+                    </div>
+                    </div>
+                </div>
+                
+               
+                    <div class="col-md-8">
+                        <span><h6>Pay secure using your credit card.</h6></span>
+                    </div>
+                    <div class="col-md-10">
+                       
+                          <div class="row fa-icons">
+                            <i class="fa fa-cc-visa" style="color: #0157a2;"></i>
+                            <i class="fa fa-cc-mastercard pr-4" style="color: #0a3a82;"></i>
+                            <i class="fa fa-cc-amex pr-5" style="color: #007bc1;"></i>
+                          </div>
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                
+                
+                
+            </div>
+        </div>
+          
+          <button class="btn btn-primary btn-lg btn-block" type="submit">PLACE ORDER</button>
+        </form>
+      </div>
+    </div>
+  
+   
+  </div>
+
+
+<br><br>
+    
+    
+<script
+src="https://code.jquery.com/jquery-3.5.1.min.js"
+integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+crossorigin="anonymous"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/CHANGELOG.md"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/LICENSE"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/package.json"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/README.md"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/sweetalert2.d.ts"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+      <!-- <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script> -->
+
+    <script src="/js/main2.js"></script>
+</body>
+</html>
